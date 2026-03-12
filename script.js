@@ -6,4 +6,4 @@ btnAlterar.addEventListener("click", () => {
 
 textoPagina.innerText = "Texto alterado com sucesso em, essa é a programação!!!"
 
-})
+}) aaaaa
