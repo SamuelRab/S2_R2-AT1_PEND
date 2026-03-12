@@ -1,9 +1,18 @@
 
-let textoPagina = document.querySelector("#textoPagina")
-let btnAlterar = document.querySelector("#btnAlterar")
+let itemInput = document.querySelector("#itemInput")
+let btnAdicionar = document.querySelector("#btnAdicionar")
+let listaItens = document.querySelector("#listaItens")
 
-btnAlterar.addEventListener("click", () => {
+btnAdicionar.addEventListener("click", () => {
+    
+let item = itemInput.value 
 
-textoPagina.innerText = "Texto alterado com sucesso em, essa é a programação!!!"
+let novoItem = document.createElement("li")
+
+novoItem.innerText = item
+
+listaItens.appendChild(novoItem)
+
+itemInput.value = ""
 
 })
