@@ -1,18 +1,32 @@
 
-let itemInput = document.querySelector("#itemInput")
+let inputTarefa = document.querySelector("#inputTarefa")
 let btnAdicionar = document.querySelector("#btnAdicionar")
-let listaItens = document.querySelector("#listaItens")
+let listaTarefas = document.querySelector("#listaTarefas")
+let mensagem = document.querySelector("#mensagem")
 
 btnAdicionar.addEventListener("click", () => {
-    
-let item = itemInput.value 
 
-let novoItem = document.createElement("li")
+let tarefa = inputTarefa.value
 
-novoItem.innerText = item
+if(tarefa === ""){
 
-listaItens.appendChild(novoItem)
+mensagem.innerText = "Tarefa vazia, toma cuidado em!"
+mensagem.className = "text-danger fw-bold"
 
-itemInput.value = ""
+} else {
+
+let novaTarefa = document.createElement("li")
+
+novaTarefa.innerText = tarefa
+novaTarefa.className = "list-group-item"
+
+listaTarefas.appendChild(novaTarefa)
+
+inputTarefa.value = ""
+
+mensagem.innerText = "Tarefa adicionada com sucesso em!"
+mensagem.className = "text-success fw-bold"
+
+}
 
 })
