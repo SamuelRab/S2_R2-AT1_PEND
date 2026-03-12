@@ -9,53 +9,45 @@ btnAdicionar.addEventListener("click", () => {
 let tarefa = inputTarefa.value
 
 if(tarefa === ""){
-
 mensagem.innerText = "Tarefa vazia!"
-mensagem.className = "text-danger fw-bold"
+mensagem.className = "text-danger"
+return
+}
 
-} else {
-
-let novaTarefa = document.createElement("li")
-novaTarefa.className = "list-group-item d-flex justify-content-between align-items-center"
+let li = document.createElement("li")
+li.className = "list-group-item"
 
 let checkbox = document.createElement("input")
 checkbox.type = "checkbox"
-checkbox.className = "form-check-input me-2"
 
-let textoTarefa = document.createElement("span")
-textoTarefa.innerText = tarefa
+let texto = document.createElement("span")
+texto.innerText = " " + tarefa + " "
 
 let btnRemover = document.createElement("button")
 btnRemover.innerText = "Remover"
 btnRemover.className = "btn btn-danger btn-sm"
 
 checkbox.addEventListener("change", () => {
-
 if(checkbox.checked){
-textoTarefa.style.textDecoration = "line-through"
-textoTarefa.style.color = "gray"
+texto.style.textDecoration = "line-through"
 }else{
-textoTarefa.style.textDecoration = "none"
-textoTarefa.style.color = "black"
+texto.style.textDecoration = "none"
 }
-
 })
 
 btnRemover.addEventListener("click", () => {
-novaTarefa.remove()
+li.remove()
 })
 
-novaTarefa.appendChild(checkbox)
-novaTarefa.appendChild(textoTarefa)
-novaTarefa.appendChild(btnRemover)
+li.appendChild(checkbox)
+li.appendChild(texto)
+li.appendChild(btnRemover)
 
-listaTarefas.appendChild(novaTarefa)
+listaTarefas.appendChild(li)
 
 inputTarefa.value = ""
 
-mensagem.innerText = "Tarefa adicionada com sucesso!"
-mensagem.className = "text-success fw-bold"
-
-}
+mensagem.innerText = "Tarefa adicionada!"
+mensagem.className = "text-success"
 
 })
