@@ -1,14 +1,9 @@
 
-let nomeUsuario = document.querySelector("#nomeUsuario")
-let btnMostrar = document.querySelector("#btnMostrar")
-let mensagem = document.querySelector("#mensagem")
+let textoPagina = document.querySelector("#textoPagina")
+let btnAlterar = document.querySelector("#btnAlterar")
 
+btnAlterar.addEventListener("click", () => {
 
-btnMostrar.addEventListener("click", () => {
-
-let nome = nomeUsuario.value // captura o valor digitado
-
-mensagem.innerText = `Olá, ${nome}! bem-vindo ao mundo da programação!`
-mensagem.className = "text-success fw-bold"
+textoPagina.innerText = "Texto alterado com sucesso em, essa é a programação!!!"
 
 })
