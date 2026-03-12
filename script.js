@@ -10,21 +10,31 @@ let tarefa = inputTarefa.value
 
 if(tarefa === ""){
 
-mensagem.innerText = "Tarefa vazia, toma cuidado em!"
+mensagem.innerText = "Tarefa vazia!"
 mensagem.className = "text-danger fw-bold"
 
 } else {
 
 let novaTarefa = document.createElement("li")
 
+novaTarefa.className = "list-group-item d-flex justify-content-between align-items-center"
+
 novaTarefa.innerText = tarefa
-novaTarefa.className = "list-group-item"
 
+let btnRemover = document.createElement("button")
+
+btnRemover.innerText = "Remover"
+btnRemover.className = "btn btn-danger btn-sm"
+
+btnRemover.addEventListener("click", () => {
+
+novaTarefa.remove()
+
+})
+novaTarefa.appendChild(btnRemover)
 listaTarefas.appendChild(novaTarefa)
-
 inputTarefa.value = ""
-
-mensagem.innerText = "Tarefa adicionada com sucesso em!"
+mensagem.innerText = "Tarefa adicionada com sucesso!"
 mensagem.className = "text-success fw-bold"
 
 }
